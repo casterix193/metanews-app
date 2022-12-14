@@ -27,10 +27,6 @@ const MENU_ITEMS = [
     title: 'Resources',
     href: '/resources',
   },
-  {
-    title: 'Trading Simulator',
-    href: 'https://tradingsimulator.onrender.com',
-  },
 ];
 
 const pages = ['Products', 'Pricing', 'Blog'];
@@ -170,6 +166,21 @@ const Navbar = () => {
                 </Button>
               </Link>
             ))}
+            <a
+                href="https://tradingsimulator.onrender.com"
+                style={{ textDecoration: 'none' }}
+              >
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    color: 'text.secondary',
+                    textTransform: 'capitalize',
+                    fontWeight: 700,
+                  }}
+                >
+                  Trading Simulator
+                </Button>
+              </a>
           </Stack>
         </Toolbar>
       </Container>
