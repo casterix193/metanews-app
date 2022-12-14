@@ -18,7 +18,7 @@ const SimulatorCard = () => {
         fontWeight={500}
         sx={{ color: '#4B525A', mb: 2 }}
       >
-        Wanna to learn how to Trade ?
+        Wanna learn how to Trade ?
       </Typography>
       <Typography variant="h5" color="text.secondary" fontWeight={700}>
         Try out our
@@ -28,6 +28,9 @@ const SimulatorCard = () => {
           fontSize={22}
           fontWeight={700}
           color="primary.main"
+          component='a' 
+          href="https://tradingsimulator.onrender.com"
+          target="_blank"
         >
           Simulator
         </Typography>
