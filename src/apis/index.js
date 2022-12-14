@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_API_URL = 'http://localhost:3000/api';
+const BASE_API_URL = 'https://metaadmin.onrender.com/api';
 
 export const getNews = (query) => {
   return axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json', {

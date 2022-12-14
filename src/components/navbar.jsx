@@ -29,7 +29,7 @@ const MENU_ITEMS = [
   },
   {
     title: 'Trading Simulator',
-    href: '',
+    href: 'https://tradingsimulator.onrender.com',
   },
 ];
 

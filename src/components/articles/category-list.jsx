@@ -21,8 +21,8 @@ const ArticlesCategoryList = ({ selected, onChange }) => {
       icon: CurrencyBitcoinRoundedIcon,
     },
     {
-      label: 'Blockchain',
-      query: 'blockchain',
+      label: 'NFTs',
+      query: 'nft',
       icon: FitbitRoundedIcon,
     },
     {
