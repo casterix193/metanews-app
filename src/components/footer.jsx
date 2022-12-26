@@ -20,6 +20,15 @@ const Footer = () => {
           <Typography component={Link} to='/resources' color="#7E8995">Resources</Typography>
           <Typography component='a' href="https://tradingsimulator.onrender.com" target="_blank" color="#7E8995">Trading Simulator</Typography>
         </Stack>
+        <Stack
+        sx={{ px:2, py: 3, backgroundColor: 'dark.darker' }}
+        directions="row"
+        alignItems="center"
+        justifyContent="center"
+        spacing={3}
+        >
+          <Typography color="#7E8995">Copyright © 2022 Dharmil Desai</Typography>
+        </Stack>
       </Container>
     </Box>
   );

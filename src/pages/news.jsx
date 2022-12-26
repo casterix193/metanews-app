@@ -15,9 +15,9 @@ const News = () => {
     setLoading(true);
 
     getNews(category)
-      .then(({ data }) => {
-        console.log(data.response.docs);
-        setData(data.response.docs || []);
+      .then(({ data: response }) => {
+        console.log(response);
+        setData(response.data || []);
       })
       .finally(() => {
         setLoading(false);

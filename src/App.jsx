@@ -12,6 +12,7 @@ import Resources from './pages/resources';
 import ResourceDetails from './pages/resource-details';
 import { Toaster } from 'react-hot-toast';
 import ArticleDetails from './pages/article-details';
+import NewsDetails from './pages/news-details';
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/news" element={<News />} />
+                <Route path="/news/read" element={<NewsDetails />} />
                 <Route path="/articles" element={<Articles />} />
                 <Route path="/articles/:id" element={<ArticleDetails />} />
                 <Route path="/resources" element={<Resources />} />

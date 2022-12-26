@@ -2,12 +2,12 @@ import axios from 'axios';
 
 const BASE_API_URL = 'https://metaadmin.onrender.com/api';
 
-export const getNews = (query) => {
-  return axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json', {
+export const getNews = (keywords) => {
+  return axios.get('http://api.mediastack.com/v1/news', {
     params: {
-      q: query,
-      sort: 'relevance',
-      'api-key': 'R08QMxMqUa0LVJ4cOPnyRmEXHgmRFZLM',
+      keywords: keywords,
+      access_key: '44b94d26bceefdf222ae9e7206dc6aef',
+      countries: 'us,ca,au',
     },
   });
 };

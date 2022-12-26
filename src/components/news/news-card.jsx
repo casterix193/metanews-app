@@ -2,15 +2,21 @@ import Card from '@mui/material/Card';
 import { CardContent, Chip } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { truncate } from 'lodash';
 
 const NewsCard = ({ data, category }) => {
+  const navigate = useNavigate();
+
   const cover = () => {
-    const image = data.multimedia[0]?.url;
-    return image
-      ? `https://www.nytimes.com/${image}`
-      : 'https://w0.peakpx.com/wallpaper/410/172/HD-wallpaper-at-quartz-bridge-2021-metaverse-vr-poster.jpg';
+    return (
+      data.image ||
+      'https://w0.peakpx.com/wallpaper/410/172/HD-wallpaper-at-quartz-bridge-2021-metaverse-vr-poster.jpg'
+    );
+  };
+
+  const handleReadMore = () => {
+    navigate(`/news/read`, { state: { news: data } });
   };
 
   return (
@@ -63,13 +69,13 @@ const NewsCard = ({ data, category }) => {
                 textTransform: 'capitalize',
               },
             }}
-            label={data.news_desk || category}
+            label={data.source || category}
           />
           <img className="NewsCard-Cover" src={cover()} />
         </Box>
         <Box sx={{ pt: 1.5, pb: 1, flex: 1 }}>
           <Typography variant="h6" fontWeight={700} sx={{ mb: 1 }}>
-            {truncate(data.headline.print_headline || data.headline.main, {
+            {truncate(data.title, {
               length: 86,
             })}
           </Typography>
@@ -85,22 +91,21 @@ const NewsCard = ({ data, category }) => {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
-              }).format(new Date(data.pub_date))}
+              }).format(new Date(data.published_at))}
             </strong>
           </Typography>
           <Typography fontWeight={400} color="#7E8995">
-            {truncate(data.abstract, { length: 164 })}
+            {truncate(data.description, { length: 164 })}
           </Typography>
         </Box>
         <Typography
-          component="a"
-          target="_blank"
-          href={data.web_url}
+          onClick={handleReadMore}
           sx={{
             mb: 0,
             color: 'primary.dark',
             fontSize: 12,
             textDecoration: 'none',
+            cursor: 'pointer',
           }}
         >
           Read More
